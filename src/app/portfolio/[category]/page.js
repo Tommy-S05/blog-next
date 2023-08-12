@@ -20,6 +20,7 @@ export default function PortfolioCategory({params}) {
                 </section>
                 <section className={'relative h-[500px] flex-1'}>
                     <Image
+                        priority={true}
                         src={'https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
                         alt={''}
                         fill={true}

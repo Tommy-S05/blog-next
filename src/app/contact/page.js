@@ -11,6 +11,7 @@ export default function Contact() {
             <div className={'flex items-center gap-24'}>
                 <div className={'flex-1 h-[500px] relative'}>
                     <Image
+                        priority={true}
                         src="/contact.png"
                         alt=""
                         fill={true}

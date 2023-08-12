@@ -9,20 +9,20 @@ export default function Portfolio() {
             </h1>
             <article className={'flex gap-12'}>
                 <Link href="/portfolio/illustrations"
-                      className={`relative border-4 border-solid border-[#bbb] rounded-md w-[300px] h-[400px] bg-cover ${styles.item}`}
+                      className={`relative text-white border-4 border-solid border-[#bbb] rounded-md w-[300px] h-[400px] bg-cover ${styles.item}`}
                       style={{backgroundImage: "url('/illustration.png')"}}
                 >
                     <span
                         className={`absolute right-2.5 bottom-2.5 text-4xl font-bold ${styles.title}`}>Illustrations</span>
                 </Link>
                 <Link href="/portfolio/websites"
-                      className={`relative border-4 border-[#bbb] rounded w-[300px] h-[400px] bg-cover ${styles.item}`}
+                      className={`relative text-white border-4 border-[#bbb] rounded w-[300px] h-[400px] bg-cover ${styles.item}`}
                       style={{backgroundImage: "url('/websites.png')"}}
                 >
                     <span className={`absolute right-2.5 bottom-2.5 text-4xl font-bold ${styles.title}`}>Websites</span>
                 </Link>
                 <Link href="/portfolio/application"
-                      className={`relative border-4 border-[#bbb] rounded w-[300px] h-[400px] bg-cover ${styles.item}`}
+                      className={`relative text-white border-4 border-[#bbb] rounded w-[300px] h-[400px] bg-cover ${styles.item}`}
                       style={{backgroundImage: "url('/apps.png')"}}
                 >
                     <span

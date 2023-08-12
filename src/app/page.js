@@ -17,7 +17,12 @@ export default function Home() {
                 <Button url="/portfolio" text="See Our Works"/>
             </section>
             <section className={'flex flex-1 flex-col gap-12'}>
-                <Image src={Hero} alt={"Hero"} className={`w-full h-[500px] object-contain ${styles.image}`}/>
+                <Image
+                    priority={true}
+                    src={Hero}
+                    alt={"Hero"}
+                    className={`w-full h-[500px] object-contain ${styles.image}`}
+                />
             </section>
         </article>
     )

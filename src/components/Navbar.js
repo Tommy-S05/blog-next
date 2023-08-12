@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 const links = [
     {
@@ -38,19 +39,21 @@ export default function Navbar() {
             <Link href={"/"} className={'font-bold text-[22px]'}>
                 lamamia
             </Link>
-            <div className={'flex items-center gap-6'}>
-                {/*<DarkModeToggle />*/}
+            <ul className={'flex items-center gap-6'}>
+                <DarkModeToggle/>
                 {links.map((link) => (
-                    <Link key={link.id} href={link.url} className={''}>
-                        {link.title}
-                    </Link>
+                    <li className={'hover:text-[#53c28b]'}>
+                        <Link key={link.id} href={link.url} className={''}>
+                            {link.title}
+                        </Link>
+                    </li>
                 ))}
                 {/*{session.status === "authenticated" && (*/}
                 <button className={'bg-[#53c28b] p-1 text-white cursor-pointer rounded'}>
                     Logout
                 </button>
                 {/*)}*/}
-            </div>
+            </ul>
         </nav>
     )
 }
