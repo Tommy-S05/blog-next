@@ -1,18 +1,32 @@
 import Image from "next/image";
+import {notFound} from "next/navigation";
 
-export default function BlogId({params}) {
+async function getData(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        next: {
+            revalidate: 120
+        }
+        // cache: 'no-store'
+    });
+    
+    if(!res.ok) {
+        return notFound();
+    }
+    
+    return await res.json();
+}
+
+export default async function BlogId({params}) {
+    const data = await getData(params.id);
     return (
         <section>
             <article className={'flex'}>
                 <section className={'flex flex-1 flex-col justify-between'}>
                     <h1 className={'text-5xl font-bold'}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                        {data?.title}
                     </h1>
                     <p className={'text-base'}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                        {data?.body}
                     </p>
                     <div className={'flex items-center gap-2.5'}>
                         <Image
