@@ -2,6 +2,10 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import styles from './page.module.css';
 
+export const metadata = {
+    title: 'Asta Blog - Contact Us',
+    description: 'Asta Blog Contact Us is the contact page of Asta Blog.',
+}
 export default function Contact() {
     return (
         <section>

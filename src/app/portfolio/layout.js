@@ -1,3 +1,7 @@
+export const metadata = {
+    title: 'Asta Blog - Portfolio',
+    description: 'Asta Blog Portfolio is the portfolio page of Asta Blog.',
+}
 export default function PortfolioLayout({children}) {
     return (
         <section>

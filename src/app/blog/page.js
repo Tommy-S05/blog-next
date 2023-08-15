@@ -17,16 +17,21 @@ async function getData() {
     return await res.json();
 }
 
+export const metadata = {
+    title: 'Asta Blog - Blog',
+    description: 'Asta Blog Blog is the blog page of Asta Blog.',
+}
+
 export default async function Blog() {
     const data = await getData();
     return (
         <section>
             {
                 data?.map((post) => (
-                    <Link key={post.id} href={`/blog/${post.id}`} className={'flex items-center gap-12 mb-12'}>
+                    <Link key={post._id} href={`/blog/${post._id}`} className={'flex items-center gap-12 mb-12'}>
                         <article>
                             <Image
-                                src={'https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
+                                src={post.img}
                                 alt={''}
                                 width={500}
                                 height={250}
@@ -38,7 +43,7 @@ export default async function Blog() {
                                 {post.title}
                             </h1>
                             <p className={'text-base text-[#999]'}>
-                                {post.body}
+                                {post.desc}
                             </p>
                         </article>
                     </Link>

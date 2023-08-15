@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 
+export const metadata = {
+    title: 'Asta Blog - About Us',
+    description: 'Asta Blog About Us is the about page of Asta Blog.',
+}
 export default function About() {
     return (
         <section className={""}>

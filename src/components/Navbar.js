@@ -37,7 +37,7 @@ export default function Navbar() {
     return (
         <nav className={'h-[100px] flex justify-between items-center'}>
             <Link href={"/"} className={'font-bold text-[22px]'}>
-                lamamia
+                AstaBlog
             </Link>
             <ul className={'flex items-center gap-6'}>
                 <DarkModeToggle/>

@@ -16,6 +16,15 @@ async function getData(id) {
     return await res.json();
 }
 
+export async function generateMetadata({params}) {
+    
+    const post = await getData(params.id)
+    return {
+        title: `Asta Blog - ${post.title}`,
+        description: post.desc,
+    };
+}
+
 export default async function BlogId({params}) {
     const data = await getData(params.id);
     return (
@@ -26,23 +35,23 @@ export default async function BlogId({params}) {
                         {data?.title}
                     </h1>
                     <p className={'text-base'}>
-                        {data?.body}
+                        {data?.desc}
                     </p>
                     <div className={'flex items-center gap-2.5'}>
                         <Image
                             priority={true}
-                            src={'https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
+                            src={data.img}
                             alt={''}
                             width={40}
                             height={40}
                             className={'rounded-full object-cover'}
                         />
-                        <span>Tommy Sánchez</span>
+                        <span>{data?.username}</span>
                     </div>
                 </section>
                 <section className={'flex-1 h-[400px] relative'}>
                     <Image
-                        src={'https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
+                        src={data?.img}
                         alt={''}
                         fill={true}
                         className={'object-cover'}
@@ -51,23 +60,24 @@ export default async function BlogId({params}) {
             </article>
             <article className={'mt-12 text-xl font-light text-[#999] text-justify'}>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                    {data?.content}
+                    {/*Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit*/}
+                    {/*amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur*/}
+                    {/*adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.*/}
+                    {/*Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.*/}
+                    {/*Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.*/}
                     
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                    {/*Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit*/}
+                    {/*amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur*/}
+                    {/*adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.*/}
+                    {/*Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.*/}
+                    {/*Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.*/}
                     
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                    {/*Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit*/}
+                    {/*amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur*/}
+                    {/*adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.*/}
+                    {/*Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.*/}
+                    {/*Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.*/}
                 </p>
             </article>
         </section>

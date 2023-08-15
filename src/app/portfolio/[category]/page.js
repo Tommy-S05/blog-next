@@ -2,8 +2,8 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import styles from './page.module.css'
 import {notFound} from "next/navigation";
-// import {items} from "@/app/portfolio/[category]/data";
-import {items} from "./data";
+import {items} from "@/app/portfolio/[category]/data";
+
 
 function getData(category) {
     const data = items[category];
@@ -12,6 +12,13 @@ function getData(category) {
     }
     
     return data;
+}
+
+export function generateMetadata({params}) {
+    return {
+        title: `Asta Blog - ${params.category}`,
+        description: 'Portfolio Category',
+    };
 }
 
 export default function PortfolioCategory({params}) {

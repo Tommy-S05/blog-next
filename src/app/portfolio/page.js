@@ -21,7 +21,7 @@ export default function Portfolio() {
                 >
                     <span className={`absolute right-2.5 bottom-2.5 text-4xl font-bold ${styles.title}`}>Websites</span>
                 </Link>
-                <Link href="/portfolio/application"
+                <Link href="/portfolio/applications"
                       className={`relative text-white border-4 border-[#bbb] rounded w-[300px] h-[400px] bg-cover ${styles.item}`}
                       style={{backgroundImage: "url('/apps.png')"}}
                 >
