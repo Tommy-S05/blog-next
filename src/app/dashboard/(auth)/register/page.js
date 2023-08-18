@@ -29,7 +29,6 @@ export default function Register() {
             res.status === 201 && router.push("/dashboard/login?success=Account has been created");
         } catch (err) {
             setError(err);
-            console.log(err);
         }
     };
     
@@ -57,7 +56,8 @@ export default function Register() {
                     className={'p-5 bg-transparent border-2 border-solid border-tertiary rounded-md text-xl font-bold text-tertiary'}
                 />
                 <button
-                    className={'w-[300px] p-5 cursor-pointer bg-primary border-none rounded-md text-quaternary font-bold'}>
+                    className={'w-[300px] p-5 cursor-pointer bg-primary border-none rounded-md text-quaternary font-bold'}
+                >
                     Register
                 </button>
                 {error && "Something went wrong!"}
